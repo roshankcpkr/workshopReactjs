@@ -7,5 +7,5 @@ Use the API - https://fakestoreapi.com/products
 - Add search functionality with javascript filter method and input box.
 - Store and manipulate data with useState.
 - Make use of useState and useEffect to implement search functionality
-- Implement as shown in given design image.
+- Implement as shown in given design image (design.jpg).
 
