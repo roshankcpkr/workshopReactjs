@@ -6,6 +6,6 @@ Use the API - https://fakestoreapi.com/products
 - Display all products using map function.
 - Add search functionality with javascript filter method and input box.
 - Store and manipulate data with useState.
-- Make use of useState and useEffect to implement search functionality
+- Make use of useState and useEffect to implement search functionality in the stored data that is retireved from the API.
 - Implement as shown in given design image (design.jpg).
 
