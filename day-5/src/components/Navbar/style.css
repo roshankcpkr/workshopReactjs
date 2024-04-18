@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.nav-h{
+    background-color: #66a9ec;
+    padding: 20px 0;
+}
+
+li{
+    list-style: none;
+    margin: 0 10px;
+}
+
+li:hover{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: beige;
+}
+
+.text-decor{
+    text-decoration: none;
+    color: rgb(18, 17, 17);
+    font-family: 'Roboto', sans-serif;
+}
+
+.active-box{
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    border-radius: 5px;
+}
