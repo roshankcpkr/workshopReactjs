@@ -15,10 +15,14 @@ const navLinks = [
     title: "Contact",
     link: "/contact",
   },
-  { 
+  {
     title: "Products",
-    link: "/products" 
-},
+    link: "/products",
+  },
+  {
+    title: "Login",
+    link: "/login",
+  },
 ];
 
 const Navbar = () => {

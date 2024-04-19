@@ -1,38 +1,39 @@
-import axios from 'axios';
-import React,{useEffect, useState} from 'react'
-import './style.css'
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
+  const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
-    const [products, setProducts] = useState([]);
-    const navigate = useNavigate()
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
-    useEffect(()=>{
-        fetchProducts();
-    },[])
-
-    const fetchProducts = async ()=>{
-        const response = await axios.get('https://fakestoreapi.com/products');
-        const data = await response.data;
-        console.log(data);
-        setProducts(data);
-    }
+  const fetchProducts = async () => {
+    const response = await axios.get("https://fakestoreapi.com/products");
+    const data = await response.data;
+    console.log(data);
+    setProducts(data);
+  };
 
   return (
     <div className="wrapper">
       <div className="grid">
         {products.map((item) => (
           <div className="box" key={item.id}>
-            <h1 >{item.title}</h1>
-            <img  src={item.image} alt="image" />
+            <h1>{item.title}</h1>
+            <img src={item.image} alt="image" />
             <p>{item.description}</p>
-            <button onClick={()=>navigate(`/products/${item.id}`)} >Read More</button>
+            <button onClick={() => navigate(`/products/${item.id}`)}>
+              Read More
+            </button>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default Products
+export default Products;
