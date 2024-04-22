@@ -11,12 +11,15 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await axios.post("https://fakestoreapi.com/auth/login", {
-        username: userName,
-        password: password,
-      });
+      const data = await axios.post(
+        "https://api.escuelajs.co/api/v1/auth/login",
+        {
+          email: userName,
+          password: password,
+        }
+      );
       console.log("data: ", data.data);
-      localStorage.setItem("token", data.data.token);
+      localStorage.setItem("token", data.data.access_token);
       setError(false);
       return navigate("/");
     } catch (err) {

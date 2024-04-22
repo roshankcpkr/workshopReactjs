@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { NavLink } from "react-router-dom";
+import { useTheme } from "../../hooks/useTheme";
 
 const navLinks = [
   {
@@ -23,9 +24,15 @@ const navLinks = [
     title: "Login",
     link: "/login",
   },
+  {
+    title: "Cart",
+    link: "/cart",
+  }
 ];
 
 const Navbar = () => {
+
+  const {theme, toggleTheme} = useTheme()
   return (
     <div>
       <div className="flex nav-h">
@@ -38,7 +45,9 @@ const Navbar = () => {
             </li>
           </ul>
         ))}
+        <button onClick={()=> toggleTheme()}>{theme === "light" ? "Dark mode" : "Light Mode"}</button>
       </div>
+
     </div>
   );
 };

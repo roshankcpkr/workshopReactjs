@@ -12,7 +12,9 @@ const Products = () => {
   }, []);
 
   const fetchProducts = async () => {
-    const response = await axios.get("https://fakestoreapi.com/products");
+    const response = await axios.get(
+      "https://api.escuelajs.co/api/v1/products"
+    );
     const data = await response.data;
     console.log(data);
     setProducts(data);
@@ -24,7 +26,7 @@ const Products = () => {
         {products.map((item) => (
           <div className="box" key={item.id}>
             <h1>{item.title}</h1>
-            <img src={item.image} alt="image" />
+            <img src={item.images} alt="image" />
             <p>{item.description}</p>
             <button onClick={() => navigate(`/products/${item.id}`)}>
               Read More

@@ -4,14 +4,16 @@ import { Outlet } from "react-router-dom";
 
 const ProtectedRoute = () => {
   const token = localStorage.getItem("token");
-  if (!token) {
-    window.location.href = "/login";
-  }
+  // if (!token) {
+  //   window.location.href = "/login";
+  // }
   return (
-    <div>
-      <h1>Protected Route</h1>
-      <Outlet />
-    </div>
+    // <div>
+    //   <h1>Protected Route</h1>
+    //   <Outlet />
+    // </div>
+
+    token ? <Outlet/> : <div>Not authenticated</div>
   );
 };
 

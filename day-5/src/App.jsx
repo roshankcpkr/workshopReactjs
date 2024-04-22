@@ -10,18 +10,21 @@ import Profile from "./pages/profile/Profile";
 import Settings from "./pages/settings/Setting";
 import Order from "./pages/orders/Order";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import Cart from "./pages/cart/Cart";
+import './App.css'
 
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route element={<RootLayout />}>
         <Route element={<ProtectedRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/orders" element={<Order />} />
+          <Route path="/cart" element={<Cart/>} />
         </Route>
-        <Route element={<RootLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<div>About</div>} />
           <Route path="/contact" element={<Contact />} />
